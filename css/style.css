@@ -17,6 +17,8 @@
 
 .a-chat-container {
     max-width:400px;
+    max-height:500px;
+    scrollbar-width: none;
 }
 
 /* Bubble Downloaded by Someone */
