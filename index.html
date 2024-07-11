@@ -27,12 +27,32 @@
                 <div class="as-big-hr-bar py-1">
                     <div class="bar-bg"></div>
                 </div>
-                <h1 class="text-white text-center my-5">GLORY TO ARSTOTZKA</h1>
+                <h1 class="text-white text-center my-5">STAZIONE DI ARSTOTZKA</h1>
             </div>
 
-            <div class="container-lg border border-danger border-1 rounded-3 py-3">
-                <div class="chat-section overflow-y-auto">
-
+            <div class="a-chat-container border border-danger border-1 rounded-3 py-3 m-auto">
+                <div class="row">
+                    <div class="col-auto my-3 ">
+                        <div class="bubble left">Salve signore/a. <br>Quanti km vuole percorrere?</div>
+                    </div>
+                    <div id="first-block" class="col-8 ms-auto my-3 d-none">
+                        <div class="bubble right"><span id="first-answer"></span></div>
+                    </div>
+                    <div class="col-auto my-3 d-none">
+                        <div class="bubble left">Okay, ricevuto. <br>Quanti anni ha?</div>
+                    </div>
+                    <div id="second-block" class="col-8 ms-auto my-3 d-none">
+                        <div class="bubble right"><span id="second-answer">3</span></div>
+                    </div>
+                    <div class="col-auto my-3 d-none">
+                        <div class="bubble left">Perfetto. <br>Il costo del suo biglietto è: <span id="ticket-price"></span></div>
+                    </div>
+                    <div class="col-11 m-auto mt-5 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Recipient's username with two button addons">
+                            <button class="btn btn-success" type="chat">Invia</button>
+                          </div>
+                    </div>
                 </div>
             </div>
             
