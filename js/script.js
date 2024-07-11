@@ -5,9 +5,11 @@ let checkAnswer2 = false;
 // Storing Variables 
 let kmNeeded;
 let userAge;
+let finalPrice;
 
-// Falso by default, se è maggiorenne diventerà True
-let userMaggiorenne = false;
+// Falso by default
+let userMinorenne = false;
+let userOld = false
 
 // Button Var
 const chatInput = document.getElementById("send-message");
@@ -58,16 +60,38 @@ chatInput.addEventListener("click", (e) => {
         // Fai lo storage del dato dell'età dell'utente.
         userAge = userMessage.value;
 
-        if (userAge >= 18) {
-            userMaggiorenne = true;
+        if (userAge < 18) {
+            userMinorenne = true;
+        } else if (userAge >= 65) {
+            userOld = true;
         }
+
+        
 
         // Nascondi la chat 
         document.getElementById("user-chatting").classList.add("d-none");
 
 
         // Calcolo del prezzo
-        
+
+        let priceNoDiscount = kmNeeded * 0.21;
+
+        if (userMinorenne) {
+            // Se l'utente è un Minorenne
+            finalPrice = priceNoDiscount - ((priceNoDiscount * 20) / 100); // Sconto del 20%
+            
+        } else if (userOld) {
+            // Se l'utente è un Over 65
+            finalPrice = priceNoDiscount - ((priceNoDiscount * 40) / 100); // Sconto del 40%
+
+        } else {
+            // Se l'età dell'utente è compresa tra i 18 anni e i 64 allora
+            finalPrice = priceNoDiscount; // Il prezzo finale non avrà sconti
+
+        }
+
+        // Visualizza il prezzo finale
+        document.getElementById("ticket-price").innerHTML = parseFloat(finalPrice).toFixed(2) + "€";
 
     }
 
