@@ -66,6 +66,9 @@ chatInput.addEventListener("click", (e) => {
         document.getElementById("user-chatting").classList.add("d-none");
 
 
+        // Calcolo del prezzo
+        
+
     }
 
 
